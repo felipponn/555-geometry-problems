@@ -1,0 +1,220 @@
+\documentclass{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{soulutf8} 
+\setlength{\headheight}{14.5pt}
+\usepackage[a4paper,left=2.0cm,right=1.0cm,top=\dimexpr15mm+1.5\baselineskip,bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{wasysym}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{xargs}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{xfrac}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tikz, tkz-euclide}
+\usetikzlibrary{patterns}
+\usepackage{enumitem}
+\usepackage{arcs}
+\usepackage{afterpage}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\usepackage{numprint}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{patterns}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{calc,arrows,matrix}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning,quotes}
+\definecolor{BLA}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{WHI}{rgb}{255,255,255}
+
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{\thesection}{1em}{\ul}
+\titleformat{\subsection}{\large\bfseries\filcenter}{\thesubsection}{1em}{}
+
+\newcommand{\limite}[3][x]{\lim\limits_{{#1}\to{#2}}{#3}}
+
+\newcommand{\sgn}{\hspace{2pt}\mathrm{sgn}\hspace{1pt}}
+
+\newcommand{\pint}[1]{\lfloor{#1}\rfloor}
+
+\newcommand{\deriv}[1]{{#1}^{\prime}}
+\newcommand{\segderiv}[1]{{#1}^{\prime\prime}}
+
+\newcommand{\integ}[3]{\int\limits_{#1}^{#2}{#3}}
+
+\newcommand{\fimd}[1]{\hspace{2pt}d{#1}}
+
+\newcommand{\multi}[7]{\textbf{({#1})} {#2}
+\begin{enumerate}
+    \item {#3}
+    
+    \item {#4}
+    
+    \item {#5}
+    
+    \item {#6}
+    
+    \item {#7}
+\end{enumerate}}
+
+\newcommand{\parenth}[1]{\left({#1}\right)}
+
+\newcommand{\opcaoIMG}[2][0.5]{}
+
+\pgfdeclarepatternformonly{south west lines}{\pgfqpoint{-0pt}{-0pt}}{\pgfqpoint{6pt}{6pt}}{\pgfqpoint{6pt}{6pt}}{
+        \pgfsetlinewidth{0.16pt}
+        \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+        \pgfpathlineto{\pgfqpoint{6pt}{6pt}}
+        \pgfpathmoveto{\pgfqpoint{5.6pt}{-0.4pt}}
+        \pgfpathlineto{\pgfqpoint{6.4pt}{0.4pt}}
+        \pgfpathmoveto{\pgfqpoint{-0.4pt}{5.6pt}}
+        \pgfpathlineto{\pgfqpoint{0.4pt}{6.4pt}}
+        \pgfusepath{stroke}}
+        
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{
+	\sbox0{$\m@th#1#2$}%
+	\vbox{
+		\hbox{\resizebox{\wd0}{\height}{\arc@char}}
+		\nointerlineskip
+		\box0
+	}%
+}
+\makeatother
+
+\DeclareFontFamily{U}{skulls}{}
+\DeclareFontShape{U}{skulls}{m}{n}{ <-> skull }{}
+\newcommand{\skull}{\text{\usefont{U}{skulls}{m}{n}\symbol{'101}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhfoffset[L]{0.5cm} % left extra length
+\fancyhfoffset[R]{0.5cm} % right extra length
+\lhead{MATH CHRONIC}
+\chead{\bfseries 555 problemas de Geometria}
+\rhead{Jeferson Almir}
+\rfoot{}
+\cfoot{\thepage}
+
+\providecommand{\sin}{}
+\renewcommand{\sin}{\hspace{2pt}\mathrm{sen}\hspace{1pt}}
+\providecommand{\tan}{}
+\renewcommand{\tan}{\hspace{2pt}\mathrm{tg}\hspace{1pt}}
+\providecommand{\cot}{}
+\renewcommand{\cot}{\hspace{2pt}\mathrm{cotg}\hspace{1pt}}
+\providecommand{\csc}{}
+\renewcommand{\csc}{\hspace{2pt}\mathrm{cossec}\hspace{1pt}}
+\providecommand{\arctan}{}
+\renewcommand{\arctan}{\hspace{2pt}\mathrm{arctg}\hspace{1pt}}
+\providecommand{\arcsin}{}
+\renewcommand{\arcsin}{\hspace{2pt}\mathrm{arcsen}\hspace{1pt}}
+\newcommand{\arccot}{\hspace{2pt}\mathrm{arccotg}\hspace{1pt}}
+
+\newcommand{\espaco}{$ $}
+
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+  
+  
+  
+\begin{document}
+\begin{center}
+Professor: Jeferson Almir
+\end{center}
+
+Aluno(a): \underline{\hspace{12cm}}
+Nº: \underline{\hspace{2cm}}
+
+Data: \underline{\hspace{2cm}}/\underline{\hspace{2cm}}/\underline{\hspace{2cm}}
+
+\begin{multicols}{2}
+
+\section{Problemas}
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}.}}
+\renewcommand\labelenumi{\textbf{\nplpadding{3}\numprint{\arabic{enumi}}.}}
+
+\begin{enumerate}
+
+    \item Seja $ABC$ um triângulo. Prove que suas medianas $CD$, $AE$ e $BF$ são concorrentes.
+    
+    \item Seja $ABC$ um triângulo. Prove que suas alturas $AE$, $CF$ e $BD$ são concorrentes.
+    
+    \item Prove que as bissetrizes internas de um $\triangle ABC$ são concorrentes.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+\end{enumerate}
+\end{multicols}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
